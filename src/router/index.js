@@ -1,27 +1,42 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Router from 'vue-router'
+import FlightSearch from '../components/FlightSearch.vue'
+// import TestDemo from "@/components/TestDemo";
 
-Vue.use(VueRouter)
+// import createRouter from 'vue-router'
+// import createWebHistory from 'vue-router'
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
 
-const router = new VueRouter({
-  routes
-})
+Vue.use(Router)
+export default new Router({
+    // history: createWebHashHistory(),
+    mode: 'hash',
+    routes: [
+        {
+            path: '/',
+            name: 'FlightSearch',
+            component: FlightSearch,
+        },
+        // {
+        //     path: '/test',
+        //     name: 'TestDemo',
+        //     component: TestDemo,
+        // }
+    ]
+});
 
-export default router
+
+
+// const router= createRouter({
+//       history: createWebHistory(""),
+//       routes:[
+//         {
+//           path: '/',
+//           name:"searchTickets",
+//           component: () => import("../components/FlightSearch")
+//         }
+//       ]
+// })
+//
+// export default router;
+
